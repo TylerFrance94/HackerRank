@@ -1,0 +1,17 @@
+        // Declare second integer, double, and String variables.
+        int iNum;
+        double dNum;
+        string sRead;
+        
+        // Read and save an integer, double, and String to your variables.
+        iNum = Convert.ToInt32(Console.ReadLine());
+        dNum = Convert.ToDouble(Console.ReadLine());
+        sRead = Console.ReadLine();
+
+        // Print the sum of both integer variables on a new line.
+        Console.WriteLine(i + iNum);
+        // Print the sum of the double variables on a new line.
+        Console.WriteLine("{0:N1}", d + dNum);
+        // Concatenate and print the String variables on a new line
+        // The 's' variable above should be printed first.
+        Console.WriteLine(s + sRead);
