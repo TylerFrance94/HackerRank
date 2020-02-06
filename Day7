@@ -1,0 +1,16 @@
+class Solution {
+    static void Main(string[] args) 
+    {
+        int n = Convert.ToInt32(Console.ReadLine());
+        int count = 0;
+
+        int[] arr = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp));
+        count = arr.Length - 1;
+
+        foreach (var i in arr)
+        {
+            Console.Write(arr[count] + " ");
+            count--;
+        }
+    }
+}
