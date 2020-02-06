@@ -1,0 +1,24 @@
+class Solution {
+    static void Main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution */
+            int T = Convert.ToInt32(Console.ReadLine());
+
+            List<string> stringlist = new List<string>();
+            string even = String.Empty;
+            string odd = String.Empty;
+            string inputstring = String.Empty;
+
+            for (int i = 0; i < T; i++)
+            {
+                inputstring = Console.ReadLine();
+                even = string.Concat(inputstring.Where((c, j) => j % 2 == 0));
+                odd = string.Concat(inputstring.Where((c, j) => j % 2 != 0));
+                stringlist.Add(even + " " + odd);
+            }
+
+            foreach (var s in stringlist)
+            {
+                Console.WriteLine(s);
+            }
+    }
+}
