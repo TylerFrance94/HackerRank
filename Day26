@@ -1,0 +1,35 @@
+class Solution {
+    static void Main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution */
+        int iFine = 0;
+        int iReturnDay = 0;
+        int iReturnMonth = 0;
+        int iReturnYear = 0;
+        int iExpectedDay = 0;
+        int iExpectedMonth = 0;
+        int iExpectedYear = 0;
+        string[] sReturnDate = Console.ReadLine().Split(' ');
+        string[] sExpectedDate = Console.ReadLine().Split(' ');
+        iReturnDay = Convert.ToInt32(sReturnDate[0]);
+        iReturnMonth = Convert.ToInt32(sReturnDate[1]);
+        iReturnYear = Convert.ToInt32(sReturnDate[2]);
+        iExpectedDay = Convert.ToInt32(sExpectedDate[0]);
+        iExpectedMonth = Convert.ToInt32(sExpectedDate[1]);
+        iExpectedYear = Convert.ToInt32(sExpectedDate[2]);
+
+        if (iReturnDay > iExpectedDay && iReturnMonth == iExpectedMonth)
+        {
+            iFine = (iReturnDay - iExpectedDay) * 15;
+        }
+        else if (iReturnMonth > iExpectedMonth && iReturnYear == iExpectedYear)
+        {
+            iFine = (iReturnMonth - iExpectedMonth) * 500;
+        }
+        else if (iReturnYear > iExpectedYear)
+        {
+            iFine = 10000;
+        }
+
+        Console.WriteLine(iFine);
+
+    }
