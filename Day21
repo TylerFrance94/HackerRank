@@ -1,0 +1,7 @@
+public static void PrintArray<T>(T[] GenericArray)
+    {
+        foreach (var i in GenericArray)
+        {
+            Console.WriteLine(i);
+        }
+    }
