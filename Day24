@@ -1,0 +1,23 @@
+    public static Node removeDuplicates(Node head)
+    {
+        //Write your code here
+        if (head == null)
+        {
+            return null;
+        }
+
+        if (head.next != null)
+        {
+            Node currNode = head.next;
+            if (head.data == currNode.data)
+            {
+                while (currNode != null && currNode.data == head.data)
+                {
+                    head.next = currNode.next;
+                    currNode = currNode.next;
+                }
+            }
+            removeDuplicates(currNode);
+        }
+        return head;
+    }
