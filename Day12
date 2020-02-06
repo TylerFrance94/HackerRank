@@ -1,0 +1,69 @@
+class Student : Person
+{
+    private int[] testScores;
+
+    /*    
+    *   Class Constructor
+    *   
+    *   Parameters: 
+    *   firstName - A string denoting the Person's first name.
+    *   lastName - A string denoting the Person's last name.
+    *   id - An integer denoting the Person's ID number.
+    *   scores - An array of integers denoting the Person's test scores.
+    */
+    // Write your constructor here
+    public Student(string firstname, string lastname, int stuid, int[] scores) : base(firstname, lastname, stuid)
+    {
+        firstname = firstName;
+        lastname = lastName;
+        stuid = id;
+        testScores = scores;
+    }
+
+    /*    
+    *   Method Name: Calculate
+    *   Return: A character denoting the grade.
+    */
+    // Write your method here
+    public char Calculate()
+    {
+        char grade;
+        int counter = 0;
+        int total = 0;
+
+        for (int i = 0; i < testScores.Length; i++)
+        {
+            total += testScores[i];
+            counter++;
+        }
+
+        total = total / counter;
+
+        if (total >= 90)
+        {
+            grade = 'O';
+        }
+        else if (total < 90 && total >= 80)
+        {
+            grade = 'E';
+        }
+        else if (total < 80 && total >= 70)
+        {
+            grade = 'A';
+        }
+        else if (total < 70 && total >= 55)
+        {
+            grade = 'P';
+        }
+        else if (total < 55 && total >= 40)
+        {
+            grade = 'D';
+        }
+        else
+        {
+            grade = 'T';
+        }
+
+        return grade;
+    }
+}
