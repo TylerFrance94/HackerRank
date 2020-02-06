@@ -1,0 +1,34 @@
+class Solution 
+{
+    static void Main(String[] args)
+    {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution */
+        int count = Int32.Parse(Console.ReadLine());
+        Dictionary<string, string> YellowPages = new Dictionary<string, string>();
+        string[] words;
+        string search;
+
+        for (int i = 0; i < count; i++)
+        {
+            words = Console.ReadLine().Split(' ');
+            YellowPages.Add(words[0], words[1]);
+        }
+
+        for(int i = 0; i < count; i++)
+        {
+            search = Console.ReadLine();
+
+
+            if (YellowPages.ContainsKey(search))
+            {
+                string value;
+                YellowPages.TryGetValue(search, out value);
+                Console.WriteLine(search + "=" + value);
+            }
+            else
+            {
+                Console.WriteLine("Not found");
+            }
+        }
+    }
+}
