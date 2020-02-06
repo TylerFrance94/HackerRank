@@ -1,0 +1,23 @@
+     static int getHeight(Node root)
+    {
+        int iHeight = 0;
+
+        if (root == null)
+        {
+            return -1;
+        }
+
+        int iLeftHeight = getHeight(root.left);
+        int iRightDepth = getHeight(root.right);
+
+        if (iLeftHeight > iRightDepth)
+        {
+            iHeight = iLeftHeight + 1;
+        }
+        else
+        {
+            iHeight = iRightDepth + 1;
+        }
+
+        return iHeight;
+    }
