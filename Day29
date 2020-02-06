@@ -1,0 +1,29 @@
+class Solution {
+
+
+
+    static void Main(string[] args) {
+        int N = Convert.ToInt32(Console.ReadLine());
+        List<Info> lInfo = new List<Info>();
+
+        for (int NItr = 0; NItr < N; NItr++)
+        {
+            Info iInfo = new Info();
+
+            string[] firstNameEmailID = Console.ReadLine().Split(' ');
+
+            iInfo.sFirstName = firstNameEmailID[0];
+            iInfo.sEmail = firstNameEmailID[1];
+            lInfo.Add(iInfo);
+        }
+
+        lInfo = new List<Info>(lInfo.OrderBy(p => p.sFirstName));
+
+        foreach (var l in lInfo)
+        {
+            if(l.sEmail.Contains("@gmail.com"))
+                Console.WriteLine(l.sFirstName);
+        }
+
+    }
+}
