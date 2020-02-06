@@ -1,0 +1,28 @@
+class Difference {
+    private int[] elements;
+    public int maximumDifference;
+    public int temp;
+    public Difference(int[] arr)
+    {
+        elements = arr;
+    }
+
+    public void computeDifference()
+    {
+        foreach (var i in elements)
+        {
+            foreach (var j in elements)
+            {
+                temp = i - j;
+                if (temp < 0)
+                {
+                    temp *= -1;
+                }
+                if (temp > maximumDifference)
+                {
+                    maximumDifference = temp;
+                }
+            }
+        }
+    }
+} // End of Difference Class
