@@ -1,0 +1,43 @@
+class Number
+{
+    public int data = 0;
+    public bool isPrime = true;
+
+}
+
+class Solution {
+    static void Main(String[] args) {
+        int iCount = 0;
+        iCount = Convert.ToInt32(Console.ReadLine());
+        List<Number> lNum = new List<Number>();
+
+        for (int i = 0; i < iCount; i++)
+        {
+            Number iNum = new Number();
+            iNum.data = Convert.ToInt32(Console.ReadLine());
+            iNum.isPrime = true;
+            lNum.Add(iNum);
+        }
+
+         for (int i = 0; i < iCount; i++)
+        {
+            for (int j = 2; j*j <= lNum[i].data; j++)
+            {
+                if (lNum[i].data % j == 0)
+                {
+                    lNum[i].isPrime = false;
+                    break;
+                }
+            }
+
+            if (lNum[i].isPrime == false || lNum[i].data == 1)
+            {
+                Console.WriteLine("Not prime");
+            }
+            else
+            {
+                Console.WriteLine("Prime");
+            }
+        }
+    }
+}
