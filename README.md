@@ -1,2 +1,2 @@
 # HackerRank
-HackerRank30DaysOfCode written in C#
+Misc Challenges from HackerRank
