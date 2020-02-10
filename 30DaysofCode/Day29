@@ -1,0 +1,35 @@
+  
+class Solution {
+    static void Main(string[] args) {
+        int t = Convert.ToInt32(Console.ReadLine());
+        int[] iBit = new int[t];
+
+        for (int tItr = 0; tItr < t; tItr++)
+        {
+            int iMax = 0;
+            string[] nk = Console.ReadLine().Split(' ');
+
+            int n = Convert.ToInt32(nk[0]);
+
+            int k = Convert.ToInt32(nk[1]);
+
+            for (int A = 1; A <= n; A++)
+            {
+                for (int B = A + 1; B <= n; B++)
+                {
+                    int current = A & B;
+                    if (current > iMax && current < k)
+                    {
+                        iMax = current;
+                    }
+                }
+            }
+
+            iBit[tItr] = iMax;
+        }
+
+        foreach (var i in iBit)
+        {
+            Console.WriteLine(i);
+        }
+    }
