@@ -15,9 +15,9 @@ class Solution {
         {
             sum += a;
         }
-
         return sum;
     }
+    
     static void Main(string[] args) {
         TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
