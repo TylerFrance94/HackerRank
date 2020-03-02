@@ -1,0 +1,76 @@
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+using System.Text;
+using System;
+
+class Solution {
+
+    // Complete the encryption function below.
+    static string encryption(string s)
+    {
+        string str = s.Replace(" ", String.Empty);
+        double sqr = Math.Sqrt(str.Length);
+        int floor = (int)Math.Floor(sqr);
+        int ceiling = (int)Math.Ceiling(sqr);
+        int count = 0;
+        string str2 = String.Empty;
+
+        if (floor * ceiling < str.Length)
+        {
+            floor = ceiling;
+        }
+
+        char[,] charr = new char[floor, ceiling];
+
+        for (int i = 0; i < floor; i++)
+        {
+            for (int j = 0; j < ceiling; j++)
+            {
+                if (count < str.Length)
+                {
+                    charr[i,j] = str[count];
+                    count++;
+                }
+            }
+        }
+
+        count = 0;
+
+        for (int i = 0; i < ceiling; i++)
+        {
+            for (int j = 0; j < floor; j++)
+            {
+                if (count < str.Length && charr[j, i] != '\0')
+                {
+                    str2 += charr[j, i];
+                    count++;
+                }
+            }
+            str2 += " ";
+        }
+
+        return str2;
+    }
+
+    static void Main(string[] args) {
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+        string s = Console.ReadLine();
+
+        string result = encryption(s);
+
+        textWriter.WriteLine(result);
+
+        textWriter.Flush();
+        textWriter.Close();
+    }
+}
